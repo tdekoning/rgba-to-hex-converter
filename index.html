@@ -1,26 +1,28 @@
 <html>
   <head>
     <title>Rgba to hex/rgb converter</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Converter for rgba-colors into hexadecimal-value.</h1>
-    <p>To use this converter, enter the rgba(R, G, B, A) string into the first input field and the hexadecimal color of the background into the second input field.</p>
-    <form>
-      <label>
-        rgba:
-        <input type="text" name="rgba" id="rgba"/>
-      </label><br/>
-      <label>
-        background hex:
-        <input type="text" name="background" id="background"/>
-      </label>
+    <div id="wrapper">
+      <h1>Converter for rgba-colors into hexadecimal-value.</h1>
+      <p>To use this converter, enter the rgba(R, G, B, A) string into the first input field and the hexadecimal color of the background into the second input field.</p>
+      <form>
+        <label>
+          rgba:
+          <input type="text" name="rgba" id="rgba" title="Format: rgba(R, G, B, A)" required/>
+        </label><br/>
+        <label>
+          background hex:
+          <input type="text" name="background" id="background" title="Format: #AABBCC or #ABC" required/>
+        </label>
 
-      <button type="submit">Calculate</button>
-    </form>
+        <button type="submit">Calculate</button>
+      </form>
 
-    <p id="result"></p>
+      <p id="result"></p>
 
-  <script src="logic.js"></script>
-
+    </div>
+    <script src="logic.js"></script>
   </body>
 </html>

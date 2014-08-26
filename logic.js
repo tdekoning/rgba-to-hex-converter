@@ -79,6 +79,11 @@
 
   // Expose calculation function to window object.
   var performcalculation = function() {
+    if( !rgbaValue || !backgroundValue ) {
+      // No values supplied.
+      return;
+    }
+
     var rgbaValue = document.getElementById( 'rgba' ).value;
     var rgbaColor = ColorUtil.convertRgbaToColor( rgbaValue );
 
