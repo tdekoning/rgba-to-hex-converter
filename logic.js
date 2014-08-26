@@ -9,7 +9,14 @@
       blue: blue,
       alpha: alpha,
       toHex: function() {
-        return red.toString(16) + green.toString(16) + blue.toString(16);
+        function getHexValue( intInput ) {
+          var result = intInput.toString(16);
+          if( result.length < 2 ) {
+            result = '0' + result;
+          }
+          return result;
+        }
+        return getHexValue(red) + getHexValue(green) + getHexValue(blue);
       }
     };
   };
