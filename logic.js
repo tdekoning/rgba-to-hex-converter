@@ -79,15 +79,14 @@
 
   // Expose calculation function to window object.
   var performcalculation = function() {
+    var rgbaValue = document.getElementById( 'rgba' ).value;
+    var backgroundValue = document.getElementById( 'background' ).value;
+    
     if( !rgbaValue || !backgroundValue ) {
       // No values supplied.
       return;
     }
-
-    var rgbaValue = document.getElementById( 'rgba' ).value;
     var rgbaColor = ColorUtil.convertRgbaToColor( rgbaValue );
-
-    var backgroundValue = document.getElementById( 'background' ).value;
     var backgroundColor = ColorUtil.convertHexToRgb( backgroundValue );
 
     var result = rgbaColor;
