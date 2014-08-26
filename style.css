@@ -6,7 +6,15 @@ body {
 }
 
 input {
-  padding: 5px;
+  font: inherit;
+  color: #000;
+  padding: 0;
+  margin: 0.5em 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid #757575;
 }
 
 button {
@@ -26,6 +34,11 @@ button:hover {
 .header {
   background-color: #3e50b4;
   padding: 30px 40px 10px 40px;
+}
+.header h1 {
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 48px;
 }
 .header h1,
 .header p {
