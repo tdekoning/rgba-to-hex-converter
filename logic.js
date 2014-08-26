@@ -95,9 +95,9 @@
       result = ColorConverter.convertToHex( rgbaColor, backgroundColor );
     }
 
-    var resultElement = document.getElementById('result');
-    resultElement.style.color = '#' + result.toHex();
-    resultElement.innerText = '#' + result.toHex();
+    var resultContainer = document.getElementById('resultcontainer');
+    resultContainer.style.backgroundColor = '#' + result.toHex();
+    document.getElementById('result').innerText = '#' + result.toHex();
   }
 
   // Eventlistener for the conversion form.

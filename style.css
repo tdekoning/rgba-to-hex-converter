@@ -50,3 +50,13 @@ button:hover {
   max-width: 900px;
   padding: 30px;
 }
+
+#resultcontainer {
+  border-radius: 10px;
+  padding: 40px;
+}
+#result {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+}
