@@ -80,12 +80,20 @@
   // Expose calculation function to window object.
   var performcalculation = function() {
     var rgbaValue = document.getElementById( 'rgba' ).value;
+    var rgbaColor = ColorUtil.convertRgbaToColor( rgbaValue );
+
     var backgroundValue = document.getElementById( 'background' ).value;
     var backgroundColor = ColorUtil.convertHexToRgb( backgroundValue );
-    var rgbaColor = ColorUtil.convertRgbaToColor( rgbaValue );
-    var result = ColorConverter.convertToHex( rgbaColor, backgroundColor );
 
-    document.getElementById('result').innerText = '#' + result.toHex();
+    var result = rgbaColor;
+    if( rgbaColor.alpha != 1 ) {
+      // rgba color has transparency, so we need to convert it.
+      result = ColorConverter.convertToHex( rgbaColor, backgroundColor );
+    }
+
+    var resultElement = document.getElementById('result');
+    resultElement.style.color = '#' + result.toHex();
+    resultElement.innerText = '#' + result.toHex();
   }
 
   // Eventlistener for the conversion form.
@@ -93,4 +101,5 @@
       e.preventDefault();
       performcalculation();
   });
+
 })();
