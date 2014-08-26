@@ -19,14 +19,24 @@
 
     // Converts a hex-color to a Color object.
     convertHexToRgb: function( hexString ) {
+      var rgbArr = [], hexPair;
+
+      function getHexPartByIndex( index ) {
+        switch( hexString.length ) {
+          case 3:
+            return hexString[index];
+          default:
+            index *= 2;
+            return hexString[index] + hexString[index+1];
+        }
+      }
+
       // String the "#" off the hex-string.
       hexString = hexString.replace('#', '');
-      var rgbArr = [], hexPair;
       
       // Convert pairs of hex-characters into decimal numbers.
-      for(var i=0; i < hexString.length; i= i+2) {
-        hexPair = hexString[i] + hexString[i+1];
-        rgbArr.push( parseInt(hexPair, 16) );
+      for(var i=0; i < hexString.length; i++) {
+        rgbArr.push( parseInt(getHexPartByIndex( i ), 16) );
       }
 
       return new Color(rgbArr[0], rgbArr[1], rgbArr[2]);
@@ -46,7 +56,7 @@
         parseInt( splittedRgba[0], 10 ),
         parseInt( splittedRgba[1], 10 ),
         parseInt( splittedRgba[2], 10 ),
-        parseInt( splittedRgba[3], 10 )
+        parseFloat( splittedRgba[3], 10 )
       );
     }
 
@@ -60,9 +70,9 @@
       var alpha = (1 - color.alpha);
 
       return new Color(
-          (1 - alpha) * bgColor.red + alpha * color.red,
-          (1 - alpha) * bgColor.green + alpha * color.green,
-          (1 - alpha) * bgColor.blue + alpha * color.blue
+          Math.floor(alpha * bgColor.red + alpha * color.red),
+          Math.floor(alpha * bgColor.green + alpha * color.green),
+          Math.floor(alpha * bgColor.blue + alpha * color.blue)
       );
     }
   };
@@ -75,7 +85,7 @@
     var rgbaColor = ColorUtil.convertRgbaToColor( rgbaValue );
     var result = ColorConverter.convertToHex( rgbaColor, backgroundColor );
 
-    document.getElementById('result').innerText = '#' + rgbaColor.toHex();
+    document.getElementById('result').innerText = '#' + result.toHex();
   }
 
   // Eventlistener for the conversion form.
