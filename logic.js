@@ -74,12 +74,20 @@
 
     // Converts the given color to a Color object, using the given gbColor in the calculation.
     convertToHex: function( color, bgColor ) {
-      var alpha = (1 - color.alpha);
+      var alpha = color.alpha;
+
+      function getTintValue(tint, bgTint) {
+        var tmp = Math.floor((1 - alpha ) * bgTint + alpha * tint);
+        if( tmp > 255 ) {
+          return 255;
+        }
+        return tmp;
+      }
 
       return new Color(
-          Math.floor(alpha * bgColor.red + alpha * color.red),
-          Math.floor(alpha * bgColor.green + alpha * color.green),
-          Math.floor(alpha * bgColor.blue + alpha * color.blue)
+        getTintValue( color.red, bgColor.red ),
+        getTintValue( color.green, bgColor.green ),
+        getTintValue( color.blue, bgColor.blue )
       );
     }
   };
