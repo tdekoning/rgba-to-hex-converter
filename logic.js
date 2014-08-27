@@ -105,7 +105,7 @@
     var backgroundColor = ColorUtil.convertHexToRgb( backgroundValue );
 
     var result = rgbaColor;
-    if( rgbaColor.alpha != 1 ) {
+    if( rgbaColor.alpha < 1 ) {
       // rgba color has transparency, so we need to convert it.
       result = ColorConverter.convertToHex( rgbaColor, backgroundColor );
     }
