@@ -67,12 +67,13 @@
 
     // Converter for hex colors
     hex: function( hexString ) {
+      hexString = hexString.replace('#', '');
       var rgbArr = [], hexPair;
 
       function getHexPartByIndex( index ) {
         switch( hexString.length ) {
           case 3:
-            return hexString[index];
+            return hexString[index] + hexString[index];
           default:
             index *= 2;
             return hexString[index] + hexString[index+1];
