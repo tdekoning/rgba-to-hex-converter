@@ -54,6 +54,8 @@ button:hover {
 #resultcontainer {
   border-radius: 10px;
   padding: 40px;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
 }
 #result {
   background-color: rgba(255, 255, 255, 0.5);
