@@ -151,7 +151,7 @@
 
   var performcalculation = function() {
     var rgbaValue = document.getElementById( 'rgba' ).value;
-    var backgroundValue = document.getElementById( 'background' ).value;
+    var backgroundValue = document.getElementById( 'background' ).value || '#ffffff';
     
     if( !rgbaValue || !backgroundValue ) {
       // No values supplied.
