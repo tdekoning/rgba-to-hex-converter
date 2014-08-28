@@ -9,15 +9,15 @@
     </div>
     <div class="content">
       <p>To use this converter, enter the rgba(R, G, B, A) or hsla(H, S, L, A) string into the first input field and the hexadecimal color of the background into the second input field.</p>
-      <p>It is also possible to enter an rgba or hsla definition for the background.</p>
+      <p>It is also possible to enter an rgb or hsl definition for the background.</p>
       <form>
         <label>
-          rgba:
-          <input type="text" name="rgba" id="rgba" placeholder="rgba(R, G, B, A)" title="Format: rgba(R, G, B, A)" required/>
+          Foreground color:
+          <input type="text" name="rgba" id="rgba" placeholder="rgba(R, G, B, A) or hsla(H, S, L, A)" title="Format: rgba(R, G, B, A)" required/>
         </label><br/>
         <label>
-          background hex:
-          <input type="text" name="background" id="background" placeholder="#AABBCC" title="Format: #AABBCC or #ABC" required/>
+          Background color:
+          <input type="text" name="background" id="background" placeholder="#AABBCC or rgb(R, G, B) or hsl(H, S, L)" title="Format: #AABBCC or #ABC" required/>
         </label>
 
         <button type="submit">Calculate</button>
