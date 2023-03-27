@@ -1,8 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Helvetica,Arial,sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   margin: 0;
+}
+@media only screen and (max-width: 900px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 input {
@@ -33,7 +42,6 @@ button:hover {
 
 .header {
   background-color: #3e50b4;
-  padding: 30px 40px 10px 40px;
 }
 .header h1 {
   font-size: 45px;
@@ -44,11 +52,22 @@ button:hover {
 .header p {
   color: white;
 }
-
+@media only screen and (max-width: 900px) {
+  .header h1 {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
 
 .content {
+  width: 95%;
   max-width: 900px;
   padding: 40px;
+}
+@media only screen and (max-width: 900px) {
+  .content {
+    padding: 16px;
+  }
 }
 
 #resultcontainer {
